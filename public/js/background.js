@@ -1,4 +1,3 @@
-/// <reference path="@types/chrome/index.d.ts"/>
 chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{
