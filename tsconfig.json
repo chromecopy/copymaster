@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "es2015",
+		"baseUrl": ".",
+		"target": "es2015",
+		"outDir": "public/js",
+		"sourceMap": true,
+		"sourceRoot": "/"
+	},
+	"exclude": [
+		"node_modules"
+	]
+}

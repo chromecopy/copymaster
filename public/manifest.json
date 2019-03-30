@@ -1,0 +1,28 @@
+{
+  "name": "Copymaster",
+  "version": "1.0.3",
+  "description": "Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots. Currently not avalible on the toolbar.",
+  "permissions": ["declarativeContent", "storage"],
+  "background": {
+    "scripts": ["/js/background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["/js/content.js"]
+  }],
+  "page_action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "manifest_version": 2
+}
