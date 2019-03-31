@@ -3,9 +3,7 @@
 		"module": "es2015",
 		"baseUrl": ".",
 		"target": "es2015",
-		"outDir": "public/js",
-		"sourceMap": true,
-		"sourceRoot": "/"
+		"outDir": "public/js"
 	},
 	"exclude": [
 		"node_modules"

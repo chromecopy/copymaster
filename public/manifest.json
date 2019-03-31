@@ -1,8 +1,9 @@
 {
   "name": "Copymaster",
-  "version": "1.0.3",
-  "description": "Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots. Currently not avalible on the toolbar.",
-  "permissions": ["declarativeContent", "storage"],
+  "version": "1.1",
+  "description": "Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots.",
+  "permissions": ["declarativeContent", "storage", "contextMenus", "activeTab"],
+  "options_page": "index.html",
   "background": {
     "scripts": ["/js/background.js"]
   },
@@ -10,6 +11,32 @@
     "matches": ["<all_urls>"],
     "js": ["/js/content.js"]
   }],
+  "commands": {
+    "slot1_clipboard": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      },
+      "description": "Set slot 1 to default clipboard"
+    },
+    "slot2_clipboard": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Set slot 2 to default clipboard"
+    },
+    "slot3_clipboard": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+3"
+      },
+      "description": "Set slot 3 to default clipboard"
+    },
+    "slot4_clipboard": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+4"
+      },
+      "description": "Set slot 4 to default clipboard"
+    }
+  },
   "page_action": {
     "default_icon": {
       "16": "images/icon16.png",

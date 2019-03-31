@@ -1,5 +1,7 @@
+//used to check if values exist on document
+const doc = document;
 let selectedText = "";
-const clipboard = {
+let clipboard = {
     1: "",
     2: "",
     3: "",
@@ -10,16 +12,21 @@ const clipboard = {
     8: "",
     9: ""
 };
+function updateClipboard() {
+    chrome.storage.sync.get({
+        clipboard: clipboard
+    }, items => {
+        clipboard = items.clipboard;
+    });
+}
 function paste(slot) {
+    updateClipboard();
     document.execCommand("insertHTML", false, clipboard[slot]);
 }
-;
 function copy(slot) {
     clipboard[slot] = selectedText;
     chrome.storage.sync.set({ clipboard: clipboard });
 }
-;
-const doc = document;
 function updateSelectedText() {
     if (window.getSelection) {
         selectedText = window.getSelection().toString();
@@ -29,7 +36,6 @@ function updateSelectedText() {
     }
     ;
 }
-;
 setInterval(updateSelectedText, 100);
 document.addEventListener("keydown", event => {
     if (event.altKey && event.shiftKey && event.code.includes("Digit")) {
@@ -38,6 +44,4 @@ document.addEventListener("keydown", event => {
     else if (event.altKey && event.code.includes("Digit")) {
         copy(parseInt(event.code.replace("Digit", "")));
     }
-    ;
 });
-//# sourceMappingURL=content.js.map
