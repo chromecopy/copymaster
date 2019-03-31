@@ -1,24 +1,7 @@
-chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
-	chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
-		chrome.declarativeContent.onPageChanged.addRules([{
-			conditions: [new chrome.declarativeContent.PageStateMatcher({
-				pageUrl: {},
-			})],
-			actions: [new chrome.declarativeContent.ShowPageAction()]
-		}]);
-	});
-});
-
 chrome.contextMenus.create({
 	title: "Copy Master Site",
 	contexts: ["page_action"],
-	onclick: () => {
-		if (chrome.runtime.openOptionsPage) {
-			chrome.runtime.openOptionsPage();
-		} else {
-			window.open(chrome.runtime.getURL('index.html'));
-		}
-	}
+	onclick: () => window.open("https://chromecopy.github.io/", "_new")
 });
 
 chrome.commands.onCommand.addListener((command: "slot1_clipboard" | "slot2_clipboard") => {
