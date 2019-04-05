@@ -1,6 +1,6 @@
 {
 	"name": "Copymaster",
-	"version": "1.1",
+	"version": "1.2",
 	"description": "Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots.",
 	"permissions": ["storage", "contextMenus"],
 	"options_page": "options.html",
