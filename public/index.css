@@ -1,0 +1,60 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.none {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+button#options {
+    right: 1em;
+    position: absolute;
+}
+
+button#options img {
+    height: 2em;
+    transition: transform 0.1s linear;
+}
+
+button#options:hover img {
+    transform: rotate(90deg) translate(0, -1px);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    cursor: normal;
+    padding: 0 1em;
+}
+
+ul li:hover {
+    background: #eee;
+    border-radius: 1em;
+}
+
+ul li span.slot {
+    pointer-events: none;
+    font-size: .75em;
+    color: #aaa;
+}
+
+ul li span.text {
+    pointer-events: none;
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,54 +1,56 @@
 {
-  "name": "Copymaster",
-  "version": "1.1",
-  "description": "Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots.",
-  "permissions": ["declarativeContent", "storage", "contextMenus"],
-  "background": {
-    "scripts": ["/js/background.js"]
-  },
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "js": ["/js/content.js"]
-  }],
-  "commands": {
-    "slot1_clipboard": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+1"
-      },
-      "description": "Set slot 1 to default clipboard"
-    },
-    "slot2_clipboard": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+2"
-      },
-      "description": "Set slot 2 to default clipboard"
-    },
-    "slot3_clipboard": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+3"
-      },
-      "description": "Set slot 3 to default clipboard"
-    },
-    "slot4_clipboard": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+4"
-      },
-      "description": "Set slot 4 to default clipboard"
-    }
-  },
-  "page_action": {
-    "default_icon": {
-      "16": "images/icon16.png",
-      "32": "images/icon32.png",
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
-    }
-  },
-  "icons": {
-    "16": "images/icon16.png",
-    "32": "images/icon32.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
-  },
-  "manifest_version": 2
+	"name": "Copymaster",
+	"version": "1.1",
+	"description": "Copy and paste more stuff with Copy Master. Copy Master can copy and paste text and save it in 9 slots.",
+	"permissions": ["storage", "contextMenus"],
+	"options_page": "options.html",
+	"background": {
+		"page": "copymaster.html"
+	},
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["/js/content.js","/js/clipboard.js"]
+	}],
+	"commands": {
+		"paste": {
+			"suggested_key": {
+				"default": "Ctrl+V",
+				"mac": "Command+V"
+			},
+			"global": true,
+			"description": "paste"
+		},
+		"copy": {
+			"suggested_key": {
+				"default": "Ctrl+C",
+				"mac": "Command+C"
+			},
+			"global": true,
+			"description": "copy"
+		},
+		"cut": {
+			"suggested_key": {
+				"default": "Ctrl+X",
+				"mac": "Command+X"
+			},
+			"global": true,
+			"description": "cut"
+		}
+	},
+	"page_action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "images/icon16.png",
+			"32": "images/icon32.png",
+			"48": "images/icon48.png",
+			"128": "images/icon128.png"
+		}
+	},
+	"icons": {
+		"16": "images/icon16.png",
+		"32": "images/icon32.png",
+		"48": "images/icon48.png",
+		"128": "images/icon128.png"
+	},
+	"manifest_version": 2
 }
